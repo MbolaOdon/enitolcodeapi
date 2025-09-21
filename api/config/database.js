@@ -11,7 +11,13 @@ module.exports = {
     logging: console.log,
     define: {
       freezeTableName: true
+    },
+    dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
     }
+  }
   },
   test: {
     username: process.env.DB_USER,
@@ -23,7 +29,13 @@ module.exports = {
     logging: false,
     define: {
       freezeTableName: true
+    },
+    dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
     }
+  }
   },
   production: {
     username: process.env.DB_USER,
@@ -37,10 +49,16 @@ module.exports = {
       freezeTableName: true
     },
     pool: {
-      max: 5,
+      max: 15,
       min: 0,
       acquire: 30000,
       idle: 10000
+    },
+    dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
     }
+  }
   }
 };
