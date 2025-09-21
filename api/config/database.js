@@ -8,7 +8,10 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    logging: console.log
+    logging: console.log,
+    define: {
+      freezeTableName: true
+    }
   },
   test: {
     username: process.env.DB_USER,
@@ -17,7 +20,10 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    logging: false
+    logging: false,
+    define: {
+      freezeTableName: true
+    }
   },
   production: {
     username: process.env.DB_USER,
@@ -27,6 +33,9 @@ module.exports = {
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
     logging: false,
+    define: {
+      freezeTableName: true
+    },
     pool: {
       max: 5,
       min: 0,
